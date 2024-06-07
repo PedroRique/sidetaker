@@ -1,0 +1,15 @@
+.sidefields {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .sidefield {
+    flex: 1;
+  }
+
+  @media (min-width: 1201px) {
+    flex-direction: row;
+  }
+}
+
