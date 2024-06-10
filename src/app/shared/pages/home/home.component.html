@@ -1,5 +1,8 @@
 <div class="sidefields">
-  @for (side of sides; track $index) {
-  <sidefield class="sidefield" [side]="side"></sidefield>
-  }
+  @for (questions of (questions$ | async); track $index) {
+    @for (side of questions.sides; track $index) {
+      <sidefield class="sidefield" [side]="side"></sidefield>
+      }
+    }
+
 </div>

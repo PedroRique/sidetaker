@@ -1,8 +1,14 @@
 import { Component, Input } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 
-export type Side = string;
-export type SideQuestion = [Side, Side];
+export type Side = {
+  title: string;
+  count: number;
+};
+export type Sides = [Side, Side];
+export type SideQuestions = {
+  sides: Sides;
+}[];
 
 @Component({
   selector: 'sidefield',
@@ -10,7 +16,8 @@ export type SideQuestion = [Side, Side];
   imports: [ButtonComponent],
   template: `
     <div class="sidefield-container">
-      <h1>{{ side }}</h1>
+      <h1>{{ side.title }}</h1>
+      <h2>Chosen by {{ side.count }}</h2>
       <sidebutton label="Take this side" (clicked)="handleSideClick()" />
     </div>
   `,
